@@ -1,10 +1,8 @@
 "use client"
 
 import Loader from '@/app/components/Loader/Loader';
-import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
-import { Carousel } from 'react-responsive-carousel';
 
 const ProductDetails = ({ id = 1 }) => {
 
