@@ -1,0 +1,35 @@
+[
+  {
+    "product": {
+      "id": 1,
+      "name": "Women's Melody",
+      "description": "Discover our latest women's sports shoes, perfectly blending performance and style. These cutting-edge athletic shoes provide superior comfort, support, and durability, essential for your active lifestyle. Advanced cushioning technology reduces fatigue, while the breathable mesh upper keeps your feet fresh. Optimal arch and ankle support minimize injury risk. Lightweight and flexible, they ensure agile movements without compromising on durability. The high-traction outsole guarantees stability on any surface. With a sleek and trendy design, they're perfect for workouts, sports events, or casual wear. Crafted from premium materials, they offer long-lasting performance. Elevate your active routine today with these ultimate sports shoes!",
+      "price": 19.99,
+      "images": [
+        "https://fashion-workdo.myshopify.com/cdn/shop/products/61hXaGkKBaL._SY695._SX._UX._SY._UY_-removebg-preview_440x466.png?v=1674106230",
+        "https://fashion-workdo.myshopify.com/cdn/shop/products/61pmIvqpXLL._SY695._SX._UX._SY._UY_-removebg-preview_440x466.png?v=1674106230",
+        "https://fashion-workdo.myshopify.com/cdn/shop/products/61CaHEZfCDL._SY695._SX._UX._SY._UY_-removebg-preview_440x466.png?v=1674106229"
+      ],
+      "category": ["Men", "Women", "Baby"],
+      "colors": ["orange", "maroon", "grey"],
+      "sizes": ["Small", "Medium", "Large"]
+    },
+    "reviews": [
+      {
+        "username": "Alex",
+        "rating": 4,
+        "comment": "We had several questions and minor issues that we werent aware of how to fix it. Contacted support and they were super quick."
+      },
+      {
+        "username": "John",
+        "rating": 5,
+        "comment": "Great theme with LOTS of options and GREAT support. Their support is awesome. Great communication and service!."
+      },
+      {
+        "username": "Liana",
+        "rating": 3,
+        "comment": "Average product. Could be better."
+      }
+    ]
+  }
+]
