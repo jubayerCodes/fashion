@@ -8,7 +8,7 @@ const page = ({ params }) => {
 
   return (
     <>
-      {/* <ProductDetails /> */}
+      <ProductDetails />
     </>
   );
 };
