@@ -3,6 +3,7 @@
 import Loader from '@/app/components/Loader/Loader';
 import React, { useEffect, useState } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import ReactImageMagnify from 'react-image-magnify';
 
 const ProductDetails = ({ id = 1 }) => {
 
@@ -42,7 +43,6 @@ const ProductDetails = ({ id = 1 }) => {
 
 
     if (!product?.product) {
-        console.log(product);
         return (
             <Loader />
         )
@@ -121,6 +121,22 @@ const ProductDetails = ({ id = 1 }) => {
         setCarted(false)
     }
 
+    const handleMouseEnter = (e) => {
+        e.target.style.transform = 'scale(300%)'
+        console.log(e);
+    }
+
+    const handleMouseleave = (e) => {
+        e.target.style.transform = 'scale(100%)'
+        e.target.style.top = '0'
+        e.target.style.left = '0'
+
+    }
+
+    const handleMouseMove = (e) => {
+        e.target.style.left = `0`
+    }
+
     return (
         <>
             <section className='py-24 pt-40'>
@@ -135,8 +151,8 @@ const ProductDetails = ({ id = 1 }) => {
                                 )
                             }
                         </div>
-                        <div className='border border-[#a7897b] flex justify-center items-center rounded-xl col-span-3 p-10'>
-                            <img src={product?.product?.images[img]} alt="" />
+                        <div className='border border-[#a7897b] flex justify-center items-center rounded-xl col-span-3 p-5'>
+                            <img id='productImg' src={product?.product?.images[img]} alt="" className='' />
                         </div>
                     </div>
                     <div>
