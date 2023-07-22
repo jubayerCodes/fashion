@@ -1,10 +1,14 @@
 "use client"
 
 import Loader from '@/app/components/Loader/Loader';
-import React, { useEffect, useState } from 'react';
+import { AuthContext } from '@/app/providers/AuthProvider/AuthProvider';
+import { useRouter } from 'next/navigation';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 const ProductDetails = ({ id = 1 }) => {
+
+    const { user } = useContext(AuthContext)
 
     const [quantity, setQuantity] = useState(1)
     const [img, setImg] = useState(0)
@@ -12,6 +16,8 @@ const ProductDetails = ({ id = 1 }) => {
     const [color, setColor] = useState(product?.product?.colors[0])
     const [favorite, setFavorite] = useState(false)
     const [carted, setCarted] = useState(false)
+
+    const { replace } = useRouter()
 
     useEffect(() => {
         fetch(`/api/products/${id}`)
@@ -55,15 +61,21 @@ const ProductDetails = ({ id = 1 }) => {
     }
 
     const addToFavorites = (id) => {
+
+
+        if (!user) {
+            return replace('/login')
+        }
+
         let favorites = []
 
         const storedFavorites = JSON.parse(localStorage.getItem('favoriteProducts'))
 
         favorites = storedFavorites || []
 
-        const favoriteProduct = { productId: id }
+        const favoriteProduct = { productId: id, email: user?.email }
 
-        const exist = favorites.find(pd => pd.productId === id)
+        const exist = favorites.find(pd => (pd.productId === id) && (pd.email === user?.email))
 
         if (!exist) {
             favorites.push(favoriteProduct)
@@ -81,7 +93,7 @@ const ProductDetails = ({ id = 1 }) => {
 
         favorites = storedFavorites || []
 
-        const remaining = favorites.filter(pd => pd.productId !== id)
+        const remaining = favorites.filter(pd => (pd.productId !== id) && (pd.email !== user?.email))
 
         localStorage.setItem('favoriteProducts', JSON.stringify(remaining))
 
