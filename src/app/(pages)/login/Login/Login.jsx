@@ -1,13 +1,35 @@
+"use client"
+
+import { AuthContext } from '@/app/providers/AuthProvider/AuthProvider';
 import Link from 'next/link';
-import React from 'react';
+import { useRouter } from 'next/navigation';
+import React, { useContext } from 'react';
 
 const Login = () => {
+
+    const { signInWithEmail } = useContext(AuthContext)
+    const { replace } = useRouter()
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const form = e.target
+        const email = form.email.value
+        const password = form.password.value
+
+        signInWithEmail(email, password)
+            .then((res) => {
+                replace('/products/1')
+            })
+            .catch((error) => console.log(error))
+    }
+
+
     return (
         <section className='min-h-[500px] flex justify-center items-center py-32'>
             <div className="my-container">
                 <h2 className='text-[#a7897b] text-[36px] text-center mb-10'>Login</h2>
                 <div className='w-[600px] mx-auto border-[#a7897b] border p-10'>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className='mb-5'>
                             <label htmlFor="emailField" className='block mb-2'>
                                 Email:

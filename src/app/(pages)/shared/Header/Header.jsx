@@ -1,17 +1,24 @@
 'use client'
 
 
+import { AuthContext } from '@/app/providers/AuthProvider/AuthProvider';
 import { InputBase, alpha, styled } from '@mui/material';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaHeart, FaRegHeart, FaSearch, FaShoppingCart, FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
 
+    const { user, logOut } = useContext(AuthContext)
+
 
     const menu = (
         <>
-            <li className='menu-item cursor-pointer'>Home</li>
+            <li className='menu-item cursor-pointer'>
+                <Link href={'/'}>
+                    Home
+                </Link>
+            </li>
             <li className='menu-item cursor-pointer'>Shop</li>
             <li className='menu-item cursor-pointer'>About Us</li>
             <li className='menu-item cursor-pointer'>Contact Us</li>
@@ -71,6 +78,10 @@ const Header = () => {
         }
     }
 
+    const handleLogOut = () => {
+        logOut()
+    }
+
     return (
         <header className='py-5 border-b border-[#222222]'>
             <div className="header-container my-container grid grid-cols-5 items-center">
@@ -101,9 +112,14 @@ const Header = () => {
                 <div className='flex justify-end items-center text-xl gap-5'>
                     <button className='text-3xl'><FaRegHeart /></button>
                     <button className='text-3xl'><FaShoppingCart /></button>
-                    <Link href={'/login'} className='flex items-center'>
-                        <button className='text-3xl'><FaUserCircle /></button>
-                    </Link>
+                    {
+                        user ?
+                            <img onClick={handleLogOut} src={user?.photoURL} alt="" className='w-[40px] h-[40px] rounded-full cursor-pointer' />
+                            :
+                            <Link href={'/login'} className='flex items-center'>
+                                <button className='text-3xl'><FaUserCircle /></button>
+                            </Link>
+                    }
                 </div>
             </div>
         </header>

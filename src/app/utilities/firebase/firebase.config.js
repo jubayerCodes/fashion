@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "fashion-1c187",
   storageBucket: "fashion-1c187.appspot.com",
   messagingSenderId: "210964256908",
-  appId: "1:210964256908:web:09de1a1836b266ca1a43a9",
+  appId: "1:210964256908:web:da66b860e2b361cb1a43a9"
 };
 
 // Initialize Firebase
