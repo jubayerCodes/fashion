@@ -3,7 +3,6 @@
 import Loader from '@/app/components/Loader/Loader';
 import React, { useEffect, useState } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
-import ReactImageMagnify from 'react-image-magnify';
 
 const ProductDetails = ({ id = 1 }) => {
 
