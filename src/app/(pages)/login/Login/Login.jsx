@@ -25,10 +25,10 @@ const Login = () => {
 
 
     return (
-        <section className='min-h-[500px] flex justify-center items-center py-32'>
+        <section className='min-h-[500px] flex justify-center items-center py-32 px-5'>
             <div className="my-container">
                 <h2 className='text-[#a7897b] text-[36px] text-center mb-10'>Login</h2>
-                <div className='w-[600px] mx-auto border-[#a7897b] border p-10'>
+                <div className='xl:w-[600px] mx-auto border-[#a7897b] border p-5 xl:p-10'>
                     <form onSubmit={handleSubmit}>
                         <div className='mb-5'>
                             <label htmlFor="emailField" className='block mb-2'>

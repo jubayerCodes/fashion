@@ -13,7 +13,7 @@ body {
 }
 
 .my-container {
-  @apply w-[1200px] mx-auto;
+  @apply xl:w-[1200px] mx-auto w-full;
 }
 
 .menu-item{

@@ -145,10 +145,10 @@ const ProductDetails = ({ id = 1 }) => {
 
     return (
         <>
-            {/* <section className='py-24 pt-40'>
-                <div className="my-container grid xl:grid-cols-2 gap-16 items-center justify-between">
+            <section className='py-24 xl:pt-40 px-5'>
+                <div className="my-container grid grid-cols-1 xl:grid-cols-2 gap-16 items-center justify-between">
                     <div className='grid grid-cols-4 gap-5'>
-                        <div className=' flex flex-col justify-center items-center col-span-1 gap-5'>
+                        <div className='flex flex-col justify-center items-center col-span-1 gap-5'>
                             {
                                 product?.product?.images.map((image, idx) =>
                                     <div key={idx} onClick={() => setImg(idx)} className={`cursor-pointer flex justify-center items-center p-3 border rounded-md ${img === idx ? 'border-white' : 'border-[#a7897b]'}`}>
@@ -181,8 +181,8 @@ const ProductDetails = ({ id = 1 }) => {
                                     <button onClick={() => addToFavorites(product?.product?.id)}><FaRegHeart className='text-[#a7897b] text-[26px]' /></button>
                             }
                         </div>
-                        <h2 className='text-[#a7897b] text-[42px] font-bold mb-5'>{product?.product?.name}</h2>
-                        <div className='flex justify-start gap-10 mb-5'>
+                        <h2 className='text-[#a7897b] text-3xl mb-10 xl:mb-5 xl:text-[42px] font-bold'>{product?.product?.name}</h2>
+                        <div className='flex justify-between xl:justify-start gap-10 mb-5'>
                             <div>
                                 <label htmlFor="color">Color:</label>
                                 <select onChange={handleChangeIndex} id="color" className='border capitalize p-1 px-2 rounded-full ml-2 bg-transparent'>
@@ -226,9 +226,9 @@ const ProductDetails = ({ id = 1 }) => {
                 </div>
             </section>
 
-            <section className='py-24 bg-[#262626]'>
-                <div className="my-container grid grid-cols-5 gap-10 justify-between items-center">
-                    <div className='col-span-3'>
+            <section className='py-24 bg-[#262626] px-5'>
+                <div className="my-container grid grid-cols-1 xl:grid-cols-5 gap-10 justify-between items-center">
+                    <div className='xl:col-span-3'>
                         <h3 className='text-3xl font-bold mb-5'>Description</h3>
                         <p>{product?.product?.description}</p>
                         <div className='mt-5 flex justify-between items-center'>
@@ -236,13 +236,13 @@ const ProductDetails = ({ id = 1 }) => {
                             <p className='capitalize'>Sizes: {product?.product?.sizes.map(size => size).join(', ')}</p>
                         </div>
                     </div>
-                    <div className='border border-[#a7897b] col-span-2 rounded-lg p-10'>
+                    <div className='border border-[#a7897b] xl:col-span-2 rounded-lg p-10'>
                         <img src={product?.product?.images[0]} alt="" />
                     </div>
                 </div>
             </section>
 
-            <section className='py-24'>
+            <section className='py-24 px-5'>
                 <div className="my-container">
                     <h2 className='text-3xl font-bold mb-5'>Reviews</h2>
                     <div className='mt-10'>
@@ -254,7 +254,7 @@ const ProductDetails = ({ id = 1 }) => {
                             }}
                             loop={true}
                             modules={[Pagination]}
-                            className="mySwiper h-[250px]"
+                            className="mySwiper xl:h-[250px] h-[320px]"
                         >
                             {
                                 product?.reviews.map((review, idx) => <SwiperSlide key={idx}><Review review={review} /></SwiperSlide>)
@@ -262,7 +262,7 @@ const ProductDetails = ({ id = 1 }) => {
                         </Swiper>
                     </div>
                 </div>
-            </section> */}
+            </section>
         </>
     );
 };

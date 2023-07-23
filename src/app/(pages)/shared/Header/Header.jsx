@@ -150,7 +150,7 @@ const Header = () => {
                 </div>
             </header>
 
-            <div className={`${drawer ? 'block' : 'hidden'} absolute bg-white text-black w-full p-4`}>
+            <div className={`${drawer ? 'block' : 'hidden'} absolute bg-white text-black w-full p-4 z-50`}>
                 <div className='flex justify-end'>
                     <FaTimes onClick={() => setDrawer(false)} className='text-3xl' />
                 </div>
