@@ -4,7 +4,7 @@ import Loader from '@/app/components/Loader/Loader';
 import { AuthContext } from '@/app/providers/AuthProvider/AuthProvider';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useEffect, useState } from 'react';
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { FaAngleLeft, FaAngleRight, FaHeart, FaRegHeart } from 'react-icons/fa';
 
 const ProductDetails = ({ id = 1 }) => {
 
@@ -101,13 +101,19 @@ const ProductDetails = ({ id = 1 }) => {
     }
 
     const addToCart = (id) => {
+
+
+        if (!user) {
+            return replace('/login')
+        }
+
         let cart = []
 
         const storedCart = JSON.parse(localStorage.getItem('cart'))
 
         cart = storedCart || []
 
-        const cartProduct = { productId: id, quantity: quantity }
+        const cartProduct = { productId: id, quantity: quantity, email: user?.email }
 
         const exist = cart.find(pd => pd.productId === id)
 
@@ -132,22 +138,6 @@ const ProductDetails = ({ id = 1 }) => {
         setCarted(false)
     }
 
-    const handleMouseEnter = (e) => {
-        e.target.style.transform = 'scale(300%)'
-        console.log(e);
-    }
-
-    const handleMouseleave = (e) => {
-        e.target.style.transform = 'scale(100%)'
-        e.target.style.top = '0'
-        e.target.style.left = '0'
-
-    }
-
-    const handleMouseMove = (e) => {
-        e.target.style.left = `0`
-    }
-
     return (
         <>
             <section className='py-24 pt-40'>
@@ -162,8 +152,14 @@ const ProductDetails = ({ id = 1 }) => {
                                 )
                             }
                         </div>
-                        <div className='border border-[#a7897b] flex justify-center items-center rounded-xl col-span-3 p-5'>
+                        <div className='border border-[#a7897b] flex justify-center items-center rounded-xl col-span-3 p-5 relative'>
+                            <button onClick={() => img > 0 ? setImg(img - 1) : setImg(product?.product.images.length - 1)} className='bg-white p-1 text-2xl left-5 absolute text-black rounded-full bg-opacity-75 cursor-pointer duration-300 hover:scale-125'>
+                                <FaAngleLeft />
+                            </button>
                             <img id='productImg' src={product?.product?.images[img]} alt="" className='' />
+                            <button onClick={() => img < (product?.product.images.length - 1) ? setImg(img + 1) : setImg(0)} className='bg-white p-1 text-2xl right-5 absolute text-black rounded-full bg-opacity-75 cursor-pointer duration-300 hover:scale-125'>
+                                <FaAngleRight />
+                            </button>
                         </div>
                     </div>
                     <div>
@@ -221,6 +217,22 @@ const ProductDetails = ({ id = 1 }) => {
                                 }
                             </button>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className='py-24 bg-[#262626]'>
+                <div className="my-container grid grid-cols-5 gap-10 justify-between items-center">
+                    <div className='col-span-3'>
+                        <h3 className='text-3xl font-bold mb-5'>Description</h3>
+                        <p>{product?.product?.description}</p>
+                        <div className='mt-5 flex justify-between items-center'>
+                            <p className='capitalize'>Colors: {product?.product?.colors.map(color => color).join(', ')}</p>
+                            <p className='capitalize'>Sizes: {product?.product?.sizes.map(size => size).join(', ')}</p>
+                        </div>
+                    </div>
+                    <div className='border border-[#a7897b] col-span-2 rounded-lg p-10'>
+                        <img src={product?.product?.images[0]} alt="" />
                     </div>
                 </div>
             </section>

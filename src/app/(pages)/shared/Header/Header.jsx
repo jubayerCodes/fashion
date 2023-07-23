@@ -19,7 +19,7 @@ const Header = () => {
                     Home
                 </Link>
             </li>
-            <li className='menu-item cursor-pointer'>Shop</li>
+            <li className='menu-item cursor-pointer'>Categories</li>
             <li className='menu-item cursor-pointer'>About Us</li>
             <li className='menu-item cursor-pointer'>Contact Us</li>
         </>
