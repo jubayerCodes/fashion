@@ -145,7 +145,7 @@ const ProductDetails = ({ id = 1 }) => {
 
     return (
         <>
-            <section className='py-24 pt-40'>
+            {/* <section className='py-24 pt-40'>
                 <div className="my-container grid xl:grid-cols-2 gap-16 items-center justify-between">
                     <div className='grid grid-cols-4 gap-5'>
                         <div className=' flex flex-col justify-center items-center col-span-1 gap-5'>
@@ -262,7 +262,7 @@ const ProductDetails = ({ id = 1 }) => {
                         </Swiper>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </>
     );
 };

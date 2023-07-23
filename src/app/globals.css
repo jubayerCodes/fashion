@@ -23,3 +23,11 @@ body {
 .swiper-pagination-bullet{
   @apply bg-white !important
 }
+
+.drawer-ul{
+  @apply flex flex-col gap-0
+}
+
+.drawer-ul .menu-item{
+  @apply hover:scale-100 py-2
+}
