@@ -36,5 +36,83 @@
         "comment": "Average product. Could be better. Great communication and service!."
       }
     ]
+  },
+  {
+    "product": {
+      "id": 2,
+      "name": "Cotton Hat",
+      "description": "Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture. Fashion is a complex and ever-changing industry that is influenced by a variety of factors, including social, economic, and cultural trends. The fashion industry is also a major economic force, generating billions of dollars in revenue each year.",
+      "price": 19.99,
+      "images": [
+        "https://fashion-workdo.myshopify.com/cdn/shop/products/71tvxa1M-oL._SX679._SX._UX._SY._UY_-removebg-preview_440x466.png?v=1674106935",
+        "https://fashion-workdo.myshopify.com/cdn/shop/products/81URGoijXVL._SX679._SX._UX._SY._UY_-removebg-preview_440x466.png?v=1674104110",
+        "https://fashion-workdo.myshopify.com/cdn/shop/products/61-A1nKVKHL._SX679._SX._UX._SY._UY_-removebg-preview_440x466.png?v=1674106935",
+        "https://fashion-workdo.myshopify.com/cdn/shop/products/615V-7riVpL._UX679_-removebg-preview_440x466.png?v=1674104111"
+      ],
+      "category": ["Men", "Women", "Baby"],
+      "colors": ["green", "pink", "blue", "purple"],
+      "sizes": ["Small", "Medium", "Large"]
+    },
+    "reviews": [
+      {
+        "username": "Alex",
+        "rating": 4,
+        "comment": "We had several questions and minor issues that we werent aware of how to fix it. Contacted support and they were super quick."
+      },
+      {
+        "username": "John",
+        "rating": 5,
+        "comment": "Great theme with LOTS of options and GREAT support. Their support is awesome. Great communication and service!."
+      },
+      {
+        "username": "Stephen",
+        "rating": 4.5,
+        "comment": "Great theme with LOTS of options and GREAT support. Their support is awesome. Great communication and service!."
+      },
+      {
+        "username": "Liana",
+        "rating": 3,
+        "comment": "Average product. Could be better. Great communication and service!."
+      }
+    ]
+  },
+  {
+    "product": {
+      "id": 3,
+      "name": "Kid's Caps",
+      "description": "Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture. Fashion is a complex and ever-changing industry that is influenced by a variety of factors, including social, economic, and cultural trends. The fashion industry is also a major economic force, generating billions of dollars in revenue each year.",
+      "price": 69.99,
+      "images": [
+        "https://fashion-workdo.myshopify.com/cdn/shop/products/71o5N4kXrQL._UX679_-removebg-preview_440x466.png?v=1674106875",
+        "https://fashion-workdo.myshopify.com/cdn/shop/products/61AR4iLISoL._UL1500_-removebg-preview_440x466.png?v=1674106875",
+        "https://fashion-workdo.myshopify.com/cdn/shop/products/61hXm8QU7PL._SX679._SX._UX._SY._UY_-removebg-preview_440x466.png?v=1674106875",
+        "https://fashion-workdo.myshopify.com/cdn/shop/products/71OTSg4okaL._UL1500_-removebg-preview_440x466.png?v=1674104577"
+      ],
+      "category": ["Baby"],
+      "colors": ["red", "white", "black", "pink"],
+      "sizes": ["Small"]
+    },
+    "reviews": [
+      {
+        "username": "Simon",
+        "rating": 4,
+        "comment": "We had several questions and minor issues that we werent aware of how to fix it. Contacted support and they were super quick."
+      },
+      {
+        "username": "Harmer",
+        "rating": 5,
+        "comment": "Great theme with LOTS of options and GREAT support. Their support is awesome. Great communication and service!."
+      },
+      {
+        "username": "Stephen",
+        "rating": 4.5,
+        "comment": "Great theme with LOTS of options and GREAT support. Their support is awesome. Great communication and service!."
+      },
+      {
+        "username": "Liana",
+        "rating": 3,
+        "comment": "Average product. Could be better. Great communication and service!."
+      }
+    ]
   }
 ]

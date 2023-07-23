@@ -8,7 +8,7 @@ const Review = ({ review }) => {
     const { username, rating, comment } = review
 
     return (
-        <div className='border border-[#a7897b] flex flex-col items-center justify-center rounded-lg p-5 text-center'>
+        <div className='border border-[#a7897b] flex flex-col items-center justify-center rounded-lg p-5 text-center xl:h-[350px]'>
             <div className='p-3 border border-[#a7897b] inline-block rounded-full bg-[#a7897b] text-black text-2xl'>
                 <FaUser />
             </div>

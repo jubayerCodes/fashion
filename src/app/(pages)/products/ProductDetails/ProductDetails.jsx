@@ -150,7 +150,7 @@ const ProductDetails = ({ id = 1 }) => {
                     <div className='grid grid-cols-4 gap-5'>
                         <div className='flex flex-col justify-center items-center col-span-1 gap-5'>
                             {
-                                product?.product?.images.map((image, idx) =>
+                                product?.product?.images.slice(0, 3).map((image, idx) =>
                                     <div key={idx} onClick={() => setImg(idx)} className={`cursor-pointer flex justify-center items-center p-3 border rounded-md ${img === idx ? 'border-white' : 'border-[#a7897b]'}`}>
                                         <img className='w-[80px]' src={image} alt="" />
                                     </div>
@@ -237,7 +237,7 @@ const ProductDetails = ({ id = 1 }) => {
                         </div>
                     </div>
                     <div className='border border-[#a7897b] xl:col-span-2 rounded-lg p-10'>
-                        <img src={product?.product?.images[0]} alt="" />
+                        <img src={product?.product?.images[img]} alt="" />
                     </div>
                 </div>
             </section>
@@ -252,9 +252,13 @@ const ProductDetails = ({ id = 1 }) => {
                             pagination={{
                                 clickable: true,
                             }}
-                            loop={true}
+                            breakpoints={{
+                                1280: {
+                                    slidesPerView: 3
+                                }
+                            }}
                             modules={[Pagination]}
-                            className="mySwiper xl:h-[250px] h-[320px]"
+                            className="mySwiper xl:h-[400px] h-[320px]"
                         >
                             {
                                 product?.reviews.map((review, idx) => <SwiperSlide key={idx}><Review review={review} /></SwiperSlide>)
