@@ -5,6 +5,11 @@ import { AuthContext } from '@/app/providers/AuthProvider/AuthProvider';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useEffect, useState } from 'react';
 import { FaAngleLeft, FaAngleRight, FaHeart, FaRegHeart } from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
+import Review from '@/app/components/Review/Review';
 
 const ProductDetails = ({ id = 1 }) => {
 
@@ -233,6 +238,27 @@ const ProductDetails = ({ id = 1 }) => {
                     </div>
                     <div className='border border-[#a7897b] col-span-2 rounded-lg p-10'>
                         <img src={product?.product?.images[0]} alt="" />
+                    </div>
+                </div>
+            </section>
+
+            <section className='py-24'>
+                <div className="my-container">
+                    <h2 className='text-3xl font-bold mb-5'>Reviews</h2>
+                    <div className='mt-10'>
+                        <Swiper
+                            slidesPerView={3}
+                            spaceBetween={30}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            modules={[Pagination]}
+                            className="mySwiper h-[350px]"
+                        >
+                            {
+                                product?.reviews.map((review, idx) => <SwiperSlide key={idx}><Review review={review} /></SwiperSlide>)
+                            }
+                        </Swiper>
                     </div>
                 </div>
             </section>
