@@ -247,13 +247,14 @@ const ProductDetails = ({ id = 1 }) => {
                     <h2 className='text-3xl font-bold mb-5'>Reviews</h2>
                     <div className='mt-10'>
                         <Swiper
-                            slidesPerView={3}
+                            slidesPerView={1}
                             spaceBetween={30}
                             pagination={{
                                 clickable: true,
                             }}
+                            loop={true}
                             modules={[Pagination]}
-                            className="mySwiper h-[350px]"
+                            className="mySwiper h-[250px]"
                         >
                             {
                                 product?.reviews.map((review, idx) => <SwiperSlide key={idx}><Review review={review} /></SwiperSlide>)
